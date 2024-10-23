@@ -1,0 +1,125 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+}
+#search-form{
+    height: 60px;
+    border-radius: 30px;
+    background-color: #a4a4a4;
+    width: 445px;
+    padding-inline: 10px;
+    transition: 0.7s ease;
+}
+
+
+#content-input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.btn-search{
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: #565656;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#content-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #a4a4a4 inset;
+    box-shadow: 0 0 0 30px #a4a4a4 inset;
+    -webkit-text-fill-color: white;
+    font-size: 18px;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espaciado entre las imágenes */
+}
+
+#gallery img {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+    border-radius: 8px;
+    object-fit: cover; 
+}
+
+#btn-logout{
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    border-radius: 50%;
+    background-color: #565656;
+    border:none;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#btn-logout i{
+    color: white;
+    font-size: 18px;
+}
+
+#btn-logout:hover, .btn-search:hover {
+    background-color: #414040;
+    transition: background 1s ease;
+}
+
+
+
+/* #search-form:hover{
+    width: 70%;
+    padding-inline: 10px;
+    transition: 0.7s ease;
+} */
+
+/* #search-form:hover > #content-input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+} */
+
+/* #search-form:hover > .btn-search{
+    background-color: red;
+    color: grey;
+} */
