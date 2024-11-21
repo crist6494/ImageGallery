@@ -1,0 +1,233 @@
+:root{
+    --primary-color: #4242C7;
+    --secondary-color: #b403e0;
+    --primary-bg-color: #000235;
+    --secondary-bg-color: #16175d;
+}
+
+
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: var(--primary-bg-color);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.title {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInOpacity 2s ease-in-out forwards;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(19,51,198);
+    background: linear-gradient(56deg, rgba(19,51,198,1) 28%, rgba(226,0,219,1) 89%);
+    animation: loadingBar 2s ease-out forwards;
+}
+
+.title h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.info-sections {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    width: 70%;
+    opacity: 0;
+    animation:  fadeZoom 1s ease-in-out forwards;
+}
+
+.info-section {
+    flex: 1;
+    max-width: 500px;
+    min-height: 120px; 
+    height: 240px;
+    max-height: 400px;
+    background-color: var(--secondary-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px rgba(28, 0, 211, 0.2);
+}
+
+.info-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px; 
+    padding: 10px;
+}
+
+.info-title h2 {
+    font-size: 25px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.info-title img {
+    width: 65px;
+    height: auto;
+    object-fit: cover;
+    padding: 5px;
+}
+
+
+.info-section p {
+    margin-left: 10px;
+    text-align: start;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.714);
+}
+
+#auth-btn {
+    margin-top: 60px;
+    text-transform: uppercase;
+    padding: 20px 25px;
+    font-size: 20px; 
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: background 0.3s;
+    box-shadow: 3px 3px 10px #8305a2;
+    animation: fadeInOpacity 2s ease-in-out forwards;
+}
+
+#auth-btn:hover {
+    background-color: #8305a2;
+}
+
+.github {
+    position: absolute;
+    top:115%;
+    left: 50px;
+    z-index: 100;
+    animation: fadeInOpacity 2s ease-in-out forwards;
+}
+
+.github img {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.github img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+@media (max-width: 968px) {
+   .title {
+        height: 150px;
+    }
+    .title h1 {
+        font-size: 40px;
+    }
+    .info-sections {
+        flex-direction: column;
+        gap: 70px;
+        width: 70%;
+    }
+
+    .info-section {
+        max-width: 100%;
+        height: 400px;
+        text-align: center;
+    }
+
+    .info-title {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-title h2 {
+        font-size: 18px;
+    }
+
+    .info-title img {
+        width: 50px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+    }
+
+    #auth-btn {
+        padding: 10px 15px;
+        font-size: 18px;
+
+    }
+    .github {
+        position: absolute;
+        top:95.5%;
+        left: 50px;
+        z-index: 100;
+        padding-bottom: 50px;
+    }
+}
+
+
+@keyframes loadingBar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+        box-shadow: 1px 5px 20px rgba(242, 241, 241, 0.18);
+    }
+}
+
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

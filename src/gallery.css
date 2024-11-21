@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #4242C7;
+    --secondary-color: #19191ac8;
+    --primary-bg-color: #000235;
+    --secondary-bg-color: #16175d;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -5,121 +12,134 @@ html, body {
     padding: 0;
 }
 
-h1 {
-    font-size: 36px;
-    font-weight: 900;
-    color: #333;
-    text-transform: uppercase;
-    padding: 10px;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.gallery-container {
+    height: 100%;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bg-color);
+    background-image: url(../resources/background.png);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
 }
 
-h1:hover {
-    transform: scale(1.05);
-}
-#search-form{
-    height: 60px;
-    border-radius: 30px;
-    background-color: #a4a4a4;
-    width: 445px;
-    padding-inline: 10px;
-    transition: 0.7s ease;
+h1 {
+    font-size: 55px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;;
 }
 
-
-#content-input{
-    display: block;
-    height: 40px;
+#search-form {
+    display: flex;
+    margin-top: 20px;
     width: 100%;
-    padding: 10px;
-    font-size: 18px;
+    max-width: 500px;
+}
+
+#search-form input {
+    flex-grow: 1;
+    padding: 10px 25px;
     border: none;
-    background-color: transparent;
+    border-radius: 8px 0 0 8px;
+    font-size: 20px;
+    background-color: #0f0749cd;
+    border: 3px solid white;
+    color: white;
+}
+
+
+#search-form input:focus {
     outline: none;
 }
 
-.btn-search{
+#search-form button {
+    padding: 18px;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    background-color: #565656;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
+    border-radius: 0 8px 8px 0;
+    border: 3px solid white;
+    border-left: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #0f0749cd;
+    transition: background-color 0.4s ease;
+}
 
-#content-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #a4a4a4 inset;
-    box-shadow: 0 0 0 30px #a4a4a4 inset;
-    -webkit-text-fill-color: white;
+#search-form button i{
+    color: white;
     font-size: 18px;
 }
+
+/* #search-form button:hover {
+    background-color: #2b055cee;
+}
+ */
+
 
 #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Espaciado entre las imágenes */
+    gap: 25px;
+    margin-top: 50px;
 }
 
 #gallery img {
-    max-width: 100%;
-    height: auto;
-    width: 200px;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 8px;
-    object-fit: cover; 
+    transition: transform 0.3s ease;
 }
 
-#btn-logout{
+#gallery img:hover {
+    transform: scale(1.05);
+}
+
+#btn-logout {
     position: absolute;
-    top: 20px;
-    right: 18px;
+    top: 40px;
+    right: 50px;
     border-radius: 50%;
-    background-color: #565656;
-    border:none;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-#btn-logout i{
-    color: white;
-    font-size: 18px;
-}
-
-#btn-logout:hover, .btn-search:hover {
-    background-color: #414040;
-    transition: background 1s ease;
-}
-
-
-
-/* #search-form:hover{
-    width: 70%;
-    padding-inline: 10px;
-    transition: 0.7s ease;
-} */
-
-/* #search-form:hover > #content-input{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    font-size: 18px;
+    background-color: var(--secondary-color);
     border: none;
-    background-color: transparent;
-    outline: none;
-} */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
 
-/* #search-form:hover > .btn-search{
+#btn-logout i {
+    color: white;
+    font-size: 18px;
+}
+
+.gallery-img {
+    position: relative;
     background-color: red;
-    color: grey;
-} */
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-img button{
+    position: absolute;
+    text-decoration: none;
+    top: 5%;
+    left: 85%;
+    z-index: 100;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

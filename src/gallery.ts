@@ -31,6 +31,8 @@ function search(url: string) {
 function displayImages(data: any) {
     const images = data.results;
     const gallery = document.getElementById('gallery') as HTMLDivElement;
+    console.log(images);
+    console.log(gallery);
     gallery.innerHTML = '';
     if (images.length === 0) {
         gallery.innerHTML = '<p>No se encontraron imágenes.</p>';
