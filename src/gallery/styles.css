@@ -1,0 +1,180 @@
+:root {
+    --primary-color: #4242C7;
+    --secondary-color: #19191ac8;
+    --primary-bg-color: #000235;
+    --secondary-bg-color: #16175d;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container {
+    height: 100%;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bg-color);
+    background-image: url(../../resources/background.png);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 55px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    gap: 40px;
+}
+
+.search-section #search-form{
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-section #search-form input {
+    flex-grow: 1;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 20px;
+    background-color: #fbfbfbcd;
+    border: 3px solid rgba(153, 3, 158, 0.812);
+    color: white;
+}
+
+.search-section #search-form input:-webkit-autofill {
+    background-color: #bb5353cd !important; /* Evitar que cambie el fondo */
+    box-shadow: 0 0 0 100px transparent inset !important; /* Evitar sombras aplicadas por autofill */
+    color: black !important; /* Cambiar el color del texto si es necesario */
+}
+
+
+.search-section #search-form input:focus {
+    outline: none;
+}
+
+.search-section #search-form > button {
+    padding: 18px;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    border: 3px solid rgba(153, 3, 158, 0.812);
+    border-left: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #fbfbfbcd;
+    transition: background-color 0.4s ease;
+}
+
+.search-section #search-form button i{
+    color: white;
+    font-size: 18px;
+}
+
+.search-section .btn-favorites{
+    background-color: rgb(218, 181, 21);
+    border: none;
+    padding: 15px 18px;
+    border-radius: 25%;
+    box-shadow: 3px 2px 10px rgba(202, 182, 0, 0.5);
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.gallery-img {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-img button{
+    position: absolute;
+    text-decoration: none;
+    top: 5%;
+    left: 82%;
+    z-index: 100;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: opacity 0.6s ease;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    color: white;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-img:hover button {
+    opacity: 1;
+}
+
+
+.gallery-img button.active i {
+    color: rgb(240, 184, 0);
+}
+
+.gallery-img button.active {
+    opacity: 1;
+}
+
+#btn-logout {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#btn-logout i {
+    color: white;
+    font-size: 18px;
+}

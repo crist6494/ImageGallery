@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-      "target": "es2020",
+      "target": "es2016",
       "module": "es2020",
       "rootDir": "./",
       "outDir": "./dist",
@@ -9,6 +9,6 @@
       "skipLibCheck": true,
       "esModuleInterop": true,
   },
-  "include": ["src/**/*.ts", "types/env.d.ts", "index.ts"],
+  "include": ["src/**/*.ts", "types/env.d.ts", "src/landing/index.ts"],
   "exclude": ["node_modules"]
 }
