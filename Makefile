@@ -1,6 +1,7 @@
 PROJECT_NAME=image-gallery
 DOCKER_COMPOSE=docker-compose
 
+
 all: build up
 
 build:
@@ -19,3 +20,5 @@ prune:
 	docker system prune -af
 	docker volume prune -f
 	docker image prune -af
+
+.PHONY: all build up down logs prune
